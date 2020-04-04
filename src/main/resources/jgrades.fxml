@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="66" maxWidth="1280" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.jgrades.Controller">
+   <children>
+      <AnchorPane prefHeight="66.0" prefWidth="1280.0" styleClass="nav" stylesheets="@style.css">
+         <children>
+            <AnchorPane fx:id="navMain" layoutX="24.0" layoutY="10.0" onMouseClicked="#onNavMain" prefHeight="46.0" prefWidth="138.0">
+               <children>
+                  <ImageView fitHeight="46.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label layoutX="45.0" layoutY="4.0" prefHeight="17.0" prefWidth="84.0" styleClass="navName" stylesheets="@style.css" text="jGrades" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="navHome" layoutX="178.0" layoutY="10.0" onMouseClicked="#onNavMain" prefHeight="46.0" prefWidth="115.0">
+               <children>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/home.png" />
+                     </image></ImageView>
+                  <Label layoutX="32.0" layoutY="4.0" prefHeight="23.0" prefWidth="66.0" styleClass="navLabel" text="Home" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="navStudents" layoutX="292.0" layoutY="10.0" onMouseClicked="#onNavStudents" prefHeight="46.0" prefWidth="121.0">
+               <children>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/students.png" />
+                     </image></ImageView>
+                  <Label layoutX="32.0" layoutY="4.0" prefHeight="23.0" prefWidth="72.0" styleClass="navLabel" text="Schüler" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="navGrades" layoutX="412.0" layoutY="10.0" onMouseClicked="#onNavGrades" prefHeight="46.0" prefWidth="121.0">
+               <children>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/grades.png" />
+                     </image></ImageView>
+                  <Label layoutX="32.0" layoutY="4.0" prefHeight="23.0" prefWidth="72.0" styleClass="navLabel" text="Noten" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="navSettings" layoutX="532.0" layoutY="10.0" onMouseClicked="#onNavSettings" prefHeight="46.0" prefWidth="180.0">
+               <children>
+                  <Label layoutX="32.0" layoutY="4.0" prefHeight="23.0" prefWidth="134.0" styleClass="navLabel" text="Einstellungen">
+                  </Label>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/settings.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="1234.0" layoutY="10.0" onMouseClicked="#onClickExitImage" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icons/close.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="1202.0" layoutY="10.0" onMouseClicked="#onClickMaximizeImage" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icons/maximize.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="1170.0" layoutY="10.0" onMouseClicked="#onClickMinimizeImage" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icons/minimize.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="66.0" prefHeight="738.0" prefWidth="1280.0" styleClass="main" stylesheets="@style.css">
+         <children>
+            <JFXComboBox fx:id="cbClass" layoutX="108.0" layoutY="3.0" onAction="#onCbClassAction" prefHeight="35.0" prefWidth="244.0" />
+            <Label layoutX="8.0" layoutY="4.0" prefHeight="17.0" prefWidth="84.0" styleClass="mainLabel" text="Klasse" />
+<!--            <Label layoutX="8.0" layoutY="55.0" text="Label" />-->
+            <fx:include fx:id="students" source="students.fxml" />
+            <fx:include fx:id="settings" source="settings.fxml" />
+            <fx:include fx:id="grades" source="grades.fxml" />
+            <fx:include fx:id="home" source="home.fxml" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

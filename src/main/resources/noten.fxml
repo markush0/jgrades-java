@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ Copyright (c) 2018.
+  ~  markush.eu
+  ~  Markus Hillmeier
+  ~  markus@markush.eu
+  -->
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<GridPane stylesheets="@../../style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.jgrades.Controller">
+    <columnConstraints>
+        <ColumnConstraints />
+        <ColumnConstraints />
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+    </rowConstraints>
+    <children>
+        <VBox GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+            <children>
+                <MenuBar>
+                    <menus>
+                        <Menu mnemonicParsing="false" text="%file">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="%new" />
+                                <MenuItem fx:id="butOpen" mnemonicParsing="false" onAction="#onButtonOpen" text="%open" />
+                                <MenuItem mnemonicParsing="false" text="%print" />
+                                <MenuItem fx:id="butClose" mnemonicParsing="false" onAction="#onButtonClose" text="%close" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="%edit">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#onButtonSettings" text="%settings" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="%help">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="%about" />
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                            <ToolBar prefHeight="40.0" prefWidth="200.0">
+                                <items>
+                                    <ComboBox fx:id="comboKlasse" onAction="#comboKlasseOnAction" prefWidth="150.0" promptText="%class" visibleRowCount="6" />
+                                    <Button fx:id="toolBtnNew" mnemonicParsing="false" onAction="#onToolBtnNew" text="%new" />
+                                    <Button fx:id="toolBtnEdit" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onToolBtnEdit" text="%edit" />
+                                </items>
+                            </ToolBar>
+                            <GridPane>
+                                <columnConstraints>
+                                    <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="ALWAYS" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints vgrow="ALWAYS" />
+                                </rowConstraints>
+                                <children>
+                                    <ListView fx:id="listStudents" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="200.0" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" />
+                                    <Label fx:id="lblName" stylesheets="@../../style.css" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.valignment="TOP">
+                                        <GridPane.margin>
+                                            <Insets />
+                                        </GridPane.margin>
+                                        <padding>
+                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                        </padding>
+                                    </Label>
+                                    <fx:include fx:id="schueler" source="student.fxml" GridPane.columnIndex="2" />
+            
+                                </children>
+                            </GridPane>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+                <HBox alignment="BOTTOM_LEFT" VBox.vgrow="NEVER">
+                    <children>
+
+                        <Label fx:id="footLbl" minHeight="20.0" minWidth="100.0" HBox.hgrow="ALWAYS">
+                            <padding>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                            </padding></Label>
+
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</GridPane>

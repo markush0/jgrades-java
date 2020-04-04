@@ -1,0 +1,36 @@
+.root{
+    /*-fx-font-size: 12pt;
+    -fx-font-family: "Courier New";
+    -fx-base: rgb(160, 200, 200);
+    -fx-background: rgb(110, 100, 200);*/
+}
+.nav {
+    -fx-background-color: #29323F;
+}
+.navLabel {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 18px;
+    -fx-text-fill: #e8e8e8;
+}
+.navLabel:hover {
+    -fx-font-weight: bold;
+}
+.navName {
+    -fx-font-weight: bold;
+    -fx-font-size: 20px;
+    -fx-text-fill: #e8e8e8;
+    -fx-font-family: "Segoe UI";
+}
+
+.main {
+    -fx-background-color: #172027;
+}
+
+.mainLabel {
+    -fx-font-family: "Segoe UI";
+    -fx-text-fill: #e8e8e8;
+}
+.head {
+    -fx-font-size: 25px;
+    -fx-text-fill: #e8e8e8;
+}
