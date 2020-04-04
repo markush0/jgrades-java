@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="699.0" prefWidth="1280.0" fx:id="hCont" stylesheets="@style.css" layoutY="55.0"
-            xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.jgrades.ControllerGrades">
+<AnchorPane fx:id="hCont" layoutY="55.0" prefHeight="699.0" prefWidth="1280.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.jgrades.ControllerGrades">
    <children>
-      <Label styleClass="head" text="Noten" />
+      <Label styleClass="head" text="%grades" />
+      <JFXListView layoutY="89.0" prefHeight="468.0" prefWidth="292.0" />
+      <Label layoutX="338.0" layoutY="89.0" text="Label" />
+      <JFXButton layoutY="36.0" text="%singleGrade" />
+      <JFXButton layoutX="122.0" layoutY="36.0" text="%multipleGrades" />
+      <TextArea editable="false" layoutX="338.0" layoutY="123.0" prefHeight="437.0" prefWidth="526.0" />
    </children>
 </AnchorPane>

@@ -6,6 +6,6 @@
 <AnchorPane prefHeight="699.0" prefWidth="1280.0" fx:id="hCont" stylesheets="@style.css" layoutY="55.0"
             xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.jgrades.ControllerHome">
    <children>
-      <Label styleClass="head" text="Home" />
+      <Label styleClass="head" text="%home" />
    </children>
 </AnchorPane>
