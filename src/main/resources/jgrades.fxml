@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -10,13 +10,13 @@
    <children>
       <AnchorPane prefHeight="66.0" prefWidth="1280.0" styleClass="nav" stylesheets="@style.css">
          <children>
-            <AnchorPane fx:id="navMain" layoutX="24.0" layoutY="10.0" onMouseClicked="#onNavMain" prefHeight="46.0" prefWidth="138.0">
+            <AnchorPane fx:id="navMain" layoutX="24.0" layoutY="19.0" onMouseClicked="#onNavMain" prefHeight="46.0" prefWidth="138.0">
                <children>
                   <ImageView fitHeight="46.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true" styleClass="navName" />
                   <Label layoutX="45.0" layoutY="4.0" prefHeight="17.0" prefWidth="84.0" styleClass="navName" stylesheets="@style.css" text="%jgrades" />
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="navHome" layoutX="178.0" layoutY="10.0" onMouseClicked="#onNavMain" prefHeight="46.0" prefWidth="115.0">
+            <AnchorPane fx:id="navHome" layoutX="178.0" layoutY="19.0" onMouseClicked="#onNavMain" prefHeight="46.0" prefWidth="115.0">
                <children>
                   <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" styleClass="navLabel">
                      <image>
@@ -25,7 +25,7 @@
                   <Label layoutX="32.0" layoutY="4.0" prefHeight="23.0" prefWidth="66.0" styleClass="navLabel" text="%home" />
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="navStudents" layoutX="292.0" layoutY="10.0" onMouseClicked="#onNavStudents" prefHeight="46.0" prefWidth="121.0">
+            <AnchorPane fx:id="navStudents" layoutX="292.0" layoutY="19.0" onMouseClicked="#onNavStudents" prefHeight="46.0" prefWidth="121.0">
                <children>
                   <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" styleClass="navLabel">
                      <image>
@@ -34,7 +34,7 @@
                   <Label layoutX="32.0" layoutY="4.0" prefHeight="23.0" prefWidth="72.0" styleClass="navLabel" text="%students" />
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="navGrades" layoutX="412.0" layoutY="10.0" onMouseClicked="#onNavGrades" prefHeight="46.0" prefWidth="121.0">
+            <AnchorPane fx:id="navGrades" layoutX="412.0" layoutY="19.0" onMouseClicked="#onNavGrades" prefHeight="46.0" prefWidth="121.0">
                <children>
                   <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" styleClass="navLabel">
                      <image>
@@ -43,7 +43,7 @@
                   <Label layoutX="32.0" layoutY="4.0" prefHeight="23.0" prefWidth="72.0" styleClass="navLabel" text="%grades" />
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="navSettings" layoutX="532.0" layoutY="10.0" onMouseClicked="#onNavSettings" prefHeight="46.0" prefWidth="180.0">
+            <AnchorPane fx:id="navSettings" layoutX="532.0" layoutY="19.0" onMouseClicked="#onNavSettings" prefHeight="46.0" prefWidth="180.0">
                <children>
                   <Label layoutX="32.0" layoutY="4.0" prefHeight="23.0" prefWidth="134.0" styleClass="navLabel" text="%settings">
                   </Label>
@@ -73,13 +73,13 @@
       </AnchorPane>
       <AnchorPane layoutY="66.0" prefHeight="738.0" prefWidth="1280.0" styleClass="main" stylesheets="@style.css">
          <children>
-            <JFXComboBox fx:id="cbClass" layoutX="108.0" layoutY="3.0" onAction="#onCbClassAction" prefHeight="35.0" prefWidth="244.0" />
-            <Label layoutX="8.0" layoutY="4.0" prefHeight="17.0" prefWidth="84.0" styleClass="mainLabel" text="%class" />
+            <Label layoutX="7.0" layoutY="13.0" prefHeight="17.0" prefWidth="84.0" styleClass="mainLabel" text="%class" />
 <!--            <Label layoutX="8.0" layoutY="55.0" text="Label" />-->
             <fx:include fx:id="students" source="students.fxml" />
             <fx:include fx:id="settings" source="settings.fxml" />
             <fx:include fx:id="grades" source="grades.fxml" />
             <fx:include fx:id="home" source="home.fxml" />
+            <ComboBox layoutX="91.0" layoutY="9.0" prefWidth="150.0" />
          </children>
       </AnchorPane>
    </children>

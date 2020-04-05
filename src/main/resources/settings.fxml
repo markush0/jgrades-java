@@ -14,16 +14,16 @@
 <AnchorPane fx:id="hCont" layoutY="55.0" prefHeight="699.0" prefWidth="1280.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.jgrades.ControllerSettings">
    <children>
       <Label styleClass="head" text="%settings" />
-      <JFXTabPane layoutY="36.0" prefHeight="605.0" prefWidth="1280.0">
+      <JFXTabPane layoutY="36.0" prefHeight="605.0" prefWidth="1280.0" styleClass="tablebg" stylesheets="@style.css">
          <tabs>
-            <Tab text="%set.general">
+            <Tab styleClass="tabPane" text="%set.general">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="settingsLabel">
                      <children>
                         <GridPane layoutX="14.0" layoutY="14.0" prefHeight="135.0" prefWidth="781.0">
                           <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="386.0" minWidth="10.0" prefWidth="253.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="528.0" minWidth="10.0" prefWidth="528.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="386.0" minWidth="10.0" prefWidth="156.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="648.0" minWidth="10.0" prefWidth="625.0" />
                           </columnConstraints>
                           <rowConstraints>
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -36,26 +36,26 @@
                               <Label styleClass="settingsLabel" text="%set.lastName" GridPane.rowIndex="1" />
                               <Label styleClass="settingsLabel" text="%set.schoolName" GridPane.rowIndex="2" />
                               <Label styleClass="settingsLabel" text="%set.schoolYear" GridPane.rowIndex="3" />
-                              <TextField GridPane.columnIndex="1" />
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <TextField fx:id="setFirstName" promptText="%set.firstName" styleClass="tablebg" GridPane.columnIndex="1" />
+                              <TextField fx:id="setLastName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <TextField fx:id="setSchoolName" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <TextField fx:id="setSchoolYear" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                            </children>
                         </GridPane>
                      </children>
                   </AnchorPane>
               </content>
             </Tab>
-            <Tab text="%set.application">
+            <Tab styleClass="tabPane" text="%set.application">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
               </content>
             </Tab>
-            <Tab text="%set.classes">
+            <Tab styleClass="tabPane" text="%set.classes">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView prefHeight="451.0" prefWidth="1280.0">
+                        <TableView fx:id="setClasses" prefHeight="451.0" prefWidth="1280.0">
                            <columns>
                               <TableColumn prefWidth="415.0" sortable="false" text="%class" />
                            </columns>
@@ -64,7 +64,7 @@
                   </AnchorPane>
               </content>
             </Tab>
-            <Tab text="%set.subjects">
+            <Tab fx:id="setSubjects" styleClass="tabPane" text="%set.subjects">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>

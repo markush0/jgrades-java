@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
+<?import javafx.scene.control.Button?>
 <AnchorPane fx:id="hCont" layoutY="55.0" prefHeight="699.0" prefWidth="1280.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.jgrades.ControllerStudents">
    <children>
       <Label styleClass="head" text="%students" />
-      <JFXButton layoutY="36.0" text="%add" />
-      <JFXButton layoutX="82.0" layoutY="36.0" text="%remove" />
+      <Button layoutY="36.0" text="%add" />
+      <Button layoutX="82.0" layoutY="36.0" text="%remove" />
       <TableView layoutY="61.0" prefHeight="551.0" prefWidth="1280.0">
         <columns>
           <TableColumn prefWidth="347.0" text="%set.lastName" />
