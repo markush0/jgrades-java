@@ -1,35 +1,66 @@
 package de.jgrades;
 
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class ControllerSettings extends ContollerParent implements Initializable {
     @FXML
-    TextField setFirstName, setLastName, setSchoolName, setSchoolYear;
+    private TextField setFirstName, setLastName, setSchoolName, setSchoolYear;
 
     @FXML
-    TableView setClasses, setSubjects;
-    TableColumn subShort, subLong, className;
+    private TableView setClasses, setSubjects;
+    @FXML
+    private TableColumn setSubShortCol, setSubLongCol, setClassesCol;
+
+
+    private Settings set;
+    private ArrayList<SchoolClass> classes;
+    private ArrayList<Subject> subjects;
+
+    public ControllerSettings() {
+        //DEMO Data
+        DemoData demo = new DemoData();
+
+        this.set = demo.getDemoSettings();
+        this.classes = demo.getDemoClasses();
+        this.subjects = demo.getDemoSubjects();
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        //Demo Data
         //General settings
-        setFirstName.setText("Marina");
-        setLastName.setText("Feuchtgruber");
-        setSchoolName.setText("MS Alfonsstraße");
-        setSchoolYear.setText("2019/2020");
+
+        setFirstName.setText(this.set.getFirstName());
+        setLastName.setText(this.set.getLastName());
+        setSchoolName.setText(this.set.getSchoolName());
+        setSchoolYear.setText(this.set.getYear());
 
         //Classes
 //        setClasses.getItems().add()
 
         //Subjects
+//        this.setClasses
+//        ObservableList<Stavka> oListStavaka = FXCollections.observableArrayList(listStavaka);
+
+
+        this.setSubLongCol.setCellValueFactory(new PropertyValueFactory<Subject, String>("subLong"));
+        this.setSubShortCol.setCellValueFactory(new PropertyValueFactory<Subject, String>("subShort"));
+
+        this.setSubjects.setItems(FXCollections.observableArrayList(this.subjects));
+
+        this.setClasses.setItems(FXCollections.observableArrayList(this.classes));
+
+//        this.setClassesCol.setCellFactory(new PropertyValueFactory<SchoolClass, String>("className"));
+
 
     }
 }

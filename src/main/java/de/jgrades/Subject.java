@@ -1,35 +1,46 @@
 package de.jgrades;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 class Subject {
-    private String fachKurz;
-    private String fachLang;
+    private StringProperty subShort  = new SimpleStringProperty();;
+    private StringProperty subLong  = new SimpleStringProperty();;
+//    private final StringProperty subShortProp = new SimpleStringProperty();
 
-    Subject(String fachKurz, String fachLang) {
-        this.fachKurz = fachKurz;
-        this.fachLang = fachLang;
+    Subject(String subShort, String subLong) {
+        this.subShort.set(subShort);
+        this.subLong.set(subLong);
     }
 
-    public String getFachKurz() {
-        return fachKurz;
+    public StringProperty subShortProperty() {
+        return this.subShort;
+    }
+    public StringProperty subLongProperty() {
+        return this.subLong;
     }
 
-    public void setFachKurz(String fachKurz) {
-        this.fachKurz = fachKurz;
+    public String getSubShort() {
+        return subShort.get();
     }
 
-    public String getFachLang() {
-        return fachLang;
+    public void setSubShort(String subShort) {
+        this.subShort.set(subShort);
     }
 
-    public void setFachLang(String fachLang) {
-        this.fachLang = fachLang;
+    public String getSubLong() {
+        return subLong.get();
+    }
+
+    public void setSubLong(String subLong) {
+        this.subLong.set(subLong);
     }
 
     @Override
     public String toString() {
         return "Subject{" +
-                "fachKurz='" + fachKurz + '\'' +
-                ", fachLang='" + fachLang + '\'' +
+                "subShort='" + subShort.get() + '\'' +
+                ", subLong='" + subLong.get() + '\'' +
                 '}';
     }
 
