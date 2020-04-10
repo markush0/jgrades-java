@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.fxmisc.cssfx.CSSFX;
 
 import java.io.IOException;
 import java.util.Locale;
@@ -25,12 +26,14 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
+        CSSFX.start();
 
         //Systemsprache holen
 
         Locale loc = Locale.getDefault();
 
         loadView(loc, primaryStage);
+
     }
 
 
