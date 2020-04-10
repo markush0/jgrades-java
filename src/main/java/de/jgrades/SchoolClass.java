@@ -1,34 +1,41 @@
 package de.jgrades;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 import java.util.ArrayList;
 
-class SchoolClass {
-    private String className;
+public class SchoolClass {
+    private StringProperty className;
     private ArrayList<Student> listStudent;
     private ArrayList<Subject> listSubjects;
 
-    SchoolClass(String className, ArrayList<Student> listStudent) {
-        this.className = className;
+    public SchoolClass(String className, ArrayList<Student> listStudent) {
+        this.className = new SimpleStringProperty(className);
         this.listStudent = listStudent;
 
     }
 
+    public StringProperty classNameProperty() {
+        return this.className;
+    }
+
     public SchoolClass(String className) {
-        this.className = className;
+        this.className = new SimpleStringProperty(className);
     }
 
     public SchoolClass(String className, ArrayList<Student> listStudent, ArrayList<Subject> listSubjects) {
-        this.className = className;
+        this.className = new SimpleStringProperty(className);
         this.listStudent = listStudent;
         this.listSubjects = listSubjects;
     }
 
     public String getClassName() {
-        return className;
+        return className.get();
     }
 
     public void setClassName(String className) {
-        this.className = className;
+        this.className.set(className);
     }
 
     public ArrayList<Student> getListStudent() {
@@ -50,7 +57,7 @@ class SchoolClass {
     @Override
     public String toString() {
         return "SchoolClass{" +
-                "className='" + className + '\'' +
+                "className='" + className.get() + '\'' +
                 '}';
     }
 }

@@ -1,51 +1,66 @@
 package de.jgrades;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 
 
-class Student {
-    private String studentFirst;
-    private String studentLast;
-    private char studentSex;
+public class Student {
+    private StringProperty studentFirst;
+    private StringProperty studentLast;
+    private StringProperty studentSex;
     private LocalDate studentBirthday;
     private ArrayList<Grades> listGrades;
 
-    public Student(String studentFirst, String studentLast, char studentSex, LocalDate studentBirthday) {
-        this.studentFirst = studentFirst;
-        this.studentLast = studentLast;
-        this.studentSex = studentSex;
-        this.studentBirthday = studentBirthday;
-    }
-
-    public Student(String studentFirst, String studentLast, char studentSex) {
-        this.studentFirst = studentFirst;
-        this.studentLast = studentLast;
-        this.studentSex = studentSex;
-    }
-
-    public String getStudentFirst() {
+    public StringProperty studentFirstProperty() {
         return studentFirst;
     }
 
-    public void setStudentFirst(String studentFirst) {
-        this.studentFirst = studentFirst;
-    }
-
-    public String getStudentLast() {
+    public StringProperty studentLastProperty() {
         return studentLast;
     }
 
-    public void setStudentLast(String studentLast) {
-        this.studentLast = studentLast;
-    }
-
-    public char getStudentSex() {
+    public StringProperty studentSexProperty() {
         return studentSex;
     }
 
-    public void setStudentSex(char studentSex) {
-        this.studentSex = studentSex;
+    public Student(String studentFirst, String studentLast, String studentSex, LocalDate studentBirthday) {
+        this.studentFirst = new SimpleStringProperty(studentFirst);
+        this.studentLast = new SimpleStringProperty(studentLast);
+        this.studentSex = new SimpleStringProperty(studentSex);
+        this.studentBirthday = studentBirthday;
+    }
+
+    public Student(String studentFirst, String studentLast, String studentSex) {
+        this.studentFirst = new SimpleStringProperty(studentFirst);
+        this.studentLast = new SimpleStringProperty(studentLast);
+        this.studentSex = new SimpleStringProperty(studentSex);
+    }
+
+    public String getStudentFirst() {
+        return studentFirst.get();
+    }
+
+    public void setStudentFirst(String studentFirst) {
+        this.studentFirst.set(studentFirst);
+    }
+
+    public String getStudentLast() {
+        return studentLast.get();
+    }
+
+    public void setStudentLast(String studentLast) {
+        this.studentLast.set(studentLast);
+    }
+
+    public String getStudentSex() {
+        return studentSex.get();
+    }
+
+    public void setStudentSex(String studentSex) {
+        this.studentSex.set(studentSex);
     }
 
     public LocalDate getStudentBirthday() {
@@ -67,12 +82,12 @@ class Student {
     @Override
     public String toString() {
         return "Student{ " +
-                studentFirst + ' ' +
-                studentLast +
+                studentFirst.get() + ' ' +
+                studentLast.get() +
                 " }";
     }
 
     public String getFullName() {
-        return this.studentFirst + ' ' + this.studentLast;
+        return this.studentFirst.get() + ' ' + this.studentLast.get();
     }
 }

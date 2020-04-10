@@ -3,14 +3,14 @@ package de.jgrades;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-class Subject {
-    private StringProperty subShort  = new SimpleStringProperty();;
-    private StringProperty subLong  = new SimpleStringProperty();;
+public class Subject {
+    private StringProperty subShort;
+    private StringProperty subLong;
 //    private final StringProperty subShortProp = new SimpleStringProperty();
 
-    Subject(String subShort, String subLong) {
-        this.subShort.set(subShort);
-        this.subLong.set(subLong);
+    public Subject(String subShort, String subLong) {
+        this.subShort = new SimpleStringProperty(subShort);
+        this.subLong = new SimpleStringProperty(subLong);
     }
 
     public StringProperty subShortProperty() {

@@ -1,6 +1,8 @@
 package de.jgrades;
 
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableArray;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
@@ -52,10 +54,11 @@ public class ControllerSettings extends ContollerParent implements Initializable
 //        ObservableList<Stavka> oListStavaka = FXCollections.observableArrayList(listStavaka);
 
 
-        this.setSubLongCol.setCellValueFactory(new PropertyValueFactory<Subject, String>("subLong"));
-        this.setSubShortCol.setCellValueFactory(new PropertyValueFactory<Subject, String>("subShort"));
-
+//        ObservableList<Subject> lst = FXCollections.observableArrayList(this.subjects);
         this.setSubjects.setItems(FXCollections.observableArrayList(this.subjects));
+
+//        this.setSubLongCol.setCellValueFactory(new PropertyValueFactory<Subject, String>("subLong"));
+//        this.setSubShortCol.setCellValueFactory(new PropertyValueFactory<Subject, String>("subShort"));
 
         this.setClasses.setItems(FXCollections.observableArrayList(this.classes));
 

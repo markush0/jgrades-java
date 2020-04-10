@@ -12,16 +12,20 @@ public class DemoData {
 
     public DemoData() {
         this.demoStudents = new ArrayList<>();
-        this.demoStudents.add(new Student("Markus", "Hillmeier", 'm'));
-        this.demoStudents.add(new Student("Georg", "Hillmeier", 'm'));
-        this.demoStudents.add(new Student("Lena", "Feuchtgruber", 'w'));
-
-        this.demoClasses = new ArrayList<>();
-        this.demoClasses.add(new SchoolClass("5a", this.demoStudents));
-        this.demoClasses.add(new SchoolClass("5a", this.demoStudents));
+        this.demoStudents.add(new Student("Markus", "Hillmeier", "m"));
+        this.demoStudents.add(new Student("Georg", "Hillmeier", "m"));
+        this.demoStudents.add(new Student("Lena", "Feuchtgruber", "w"));
+        this.demoStudents.add(new Student("Lena", "Feuchtgruber", "w"));
 
         this.demoSubjects = new ArrayList<>();
         this.demoSubjects.add(new Subject("WG", "Werken und Gestalten"));
+        this.demoSubjects.add(new Subject("SO", "Soziales"));
+        this.demoSubjects.add(new Subject("Tast", "Tastschreiben"));
+
+
+        this.demoClasses = new ArrayList<>();
+        this.demoClasses.add(new SchoolClass("5a", this.demoStudents, this.demoSubjects));
+        this.demoClasses.add(new SchoolClass("5a", this.demoStudents, this.demoSubjects));
 
         this.demoSettings = new Settings("Marina", "Feuchtgruber", "MS Alfonsstraße", "2019/2020");
     }
