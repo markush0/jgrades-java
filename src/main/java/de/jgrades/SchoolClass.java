@@ -13,7 +13,7 @@ class SchoolClass {
 
     }
 
-    SchoolClass(String className) {
+    public SchoolClass(String className) {
         this.className = className;
     }
 

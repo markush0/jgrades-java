@@ -4,8 +4,14 @@ public class Settings {
     private String firstName;
     private String lastName;
     private String schoolName;
-    private String firstYear;
-    private String lastYear;
+    private String year;
+
+    public Settings(String firstName, String lastName, String schoolName, String year) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.schoolName = schoolName;
+        this.year = year;
+    }
 
     public String getFirstName() {
         return firstName;
@@ -31,27 +37,9 @@ public class Settings {
         this.schoolName = schoolName;
     }
 
-    public String getFirstYear() {
-        return firstYear;
-    }
+    public String getYear() { return year; }
 
-    public void setFirstYear(String firstYear) {
-        this.firstYear = firstYear;
-    }
+    public void setYear(String year) { this.year = year; }
 
-    public String getLastYear() {
-        return lastYear;
-    }
 
-    public void setLastYear(String lastYear) {
-        this.lastYear = lastYear;
-    }
-
-    public Settings(String firstName, String lastName, String schoolName, String firstYear, String lastYear) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.schoolName = schoolName;
-        this.firstYear = firstYear;
-        this.lastYear = lastYear;
-    }
 }

@@ -11,7 +11,7 @@ class Student {
     private LocalDate studentBirthday;
     private ArrayList<Grades> listGrades;
 
-    Student(String studentFirst, String studentLast, char studentSex, LocalDate studentBirthday) {
+    public Student(String studentFirst, String studentLast, char studentSex, LocalDate studentBirthday) {
         this.studentFirst = studentFirst;
         this.studentLast = studentLast;
         this.studentSex = studentSex;
