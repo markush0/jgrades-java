@@ -16,7 +16,12 @@ public class ControllerStudents extends ContollerParent implements Initializable
     ArrayList<Student> students;
 
     public ControllerStudents() {
-        this.students = new DemoData().getDemoStudents();
+        DemoData demo = new DemoData();
+        if (demo.isDemo()) {
+            this.students = demo.getDemoStudents();
+        } else {
+
+        }
     }
 
     @Override

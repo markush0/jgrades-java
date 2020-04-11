@@ -9,11 +9,31 @@ public class DemoData {
     private ArrayList<Subject> demoSubjects;
 
     private Settings demoSettings;
+    private boolean demo;
 
     public DemoData() {
+        this.demo = true;
+
         this.demoStudents = new ArrayList<>();
         this.demoStudents.add(new Student("Markus", "Hillmeier", "m"));
         this.demoStudents.add(new Student("Georg", "Hillmeier", "m"));
+        this.demoStudents.add(new Student("Lena", "Feuchtgruber", "w"));
+        this.demoStudents.add(new Student("Lena", "Feuchtgruber", "w"));
+        this.demoStudents.add(new Student("Lena", "Feuchtgruber", "w"));
+        this.demoStudents.add(new Student("Lena", "Feuchtgruber", "w"));
+        this.demoStudents.add(new Student("Lena", "Feuchtgruber", "w"));
+        this.demoStudents.add(new Student("Lena", "Feuchtgruber", "w"));
+        this.demoStudents.add(new Student("Lena", "Feuchtgruber", "w"));
+        this.demoStudents.add(new Student("Lena", "Feuchtgruber", "w"));
+        this.demoStudents.add(new Student("Lena", "Feuchtgruber", "w"));
+        this.demoStudents.add(new Student("Lena", "Feuchtgruber", "w"));
+        this.demoStudents.add(new Student("Lena", "Feuchtgruber", "w"));
+        this.demoStudents.add(new Student("Lena", "Feuchtgruber", "w"));
+        this.demoStudents.add(new Student("Lena", "Feuchtgruber", "w"));
+        this.demoStudents.add(new Student("Lena", "Feuchtgruber", "w"));
+        this.demoStudents.add(new Student("Lena", "Feuchtgruber", "w"));
+        this.demoStudents.add(new Student("Lena", "Feuchtgruber", "w"));
+        this.demoStudents.add(new Student("Lena", "Feuchtgruber", "w"));
         this.demoStudents.add(new Student("Lena", "Feuchtgruber", "w"));
         this.demoStudents.add(new Student("Lena", "Feuchtgruber", "w"));
 
@@ -61,5 +81,9 @@ public class DemoData {
 
     public void setDemoSettings(Settings demoSettings) {
         this.demoSettings = demoSettings;
+    }
+
+    public boolean isDemo() {
+        return demo;
     }
 }

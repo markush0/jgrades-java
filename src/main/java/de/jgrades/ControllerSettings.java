@@ -32,9 +32,13 @@ public class ControllerSettings extends ContollerParent implements Initializable
         //DEMO Data
         DemoData demo = new DemoData();
 
-        this.set = demo.getDemoSettings();
-        this.classes = demo.getDemoClasses();
-        this.subjects = demo.getDemoSubjects();
+        if (demo.isDemo()) {
+            this.set = demo.getDemoSettings();
+            this.classes = demo.getDemoClasses();
+            this.subjects = demo.getDemoSubjects();
+        } else {
+
+        }
     }
 
     @Override
