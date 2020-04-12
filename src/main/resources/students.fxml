@@ -1,34 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.cell.PropertyValueFactory?>
-<AnchorPane fx:id="hCont" layoutY="55.0" prefHeight="699.0" prefWidth="1280.0" stylesheets="@style.css"
-            xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="de.jgrades.ControllerStudents">
+<AnchorPane fx:id="hCont" layoutY="55.0" prefHeight="699.0" prefWidth="1280.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.jgrades.ControllerStudents">
     <children>
-        <Label styleClass="head" text="%students"/>
-        <Button layoutY="36.0" text="%add"/>
-        <Button layoutX="82.0" layoutY="36.0" text="%remove"/>
-        <TableView fx:id="tabStudents" layoutY="61.0" prefHeight="551.0" prefWidth="1280.0">
+        <Label styleClass="head" text="%students" />
+        <Button layoutY="36.0" text="%add" />
+        <Button layoutX="82.0" layoutY="36.0" text="%remove" />
+        <TableView fx:id="tabStudents" editable="true" layoutY="61.0" prefHeight="551.0" prefWidth="1280.0">
             <columns>
                 <TableColumn prefWidth="347.0" text="%set.lastName">
                     <cellValueFactory>
-                        <PropertyValueFactory property="studentLast"/>
+                        <PropertyValueFactory property="studentLast" />
                     </cellValueFactory>
                 </TableColumn>
                 <TableColumn prefWidth="288.0" text="%set.firstName">
                     <cellValueFactory>
-                        <PropertyValueFactory property="studentFirst"/>
+                        <PropertyValueFactory property="studentFirst" />
                     </cellValueFactory>
                 </TableColumn>
                 <TableColumn prefWidth="115.0" text="%sex">
                     <cellValueFactory>
-                        <PropertyValueFactory property="studentSex"/>
+                        <PropertyValueFactory property="studentSex" />
                     </cellValueFactory>
                 </TableColumn>
             </columns>
