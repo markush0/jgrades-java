@@ -25,20 +25,21 @@ public class ControllerSettings extends ContollerParent implements Initializable
 
 
     private Settings set;
-    private ArrayList<SchoolClass> classes;
-    private ArrayList<Subject> subjects;
+//    private ArrayList<SchoolClass> classes;
+//    private ArrayList<Subject> subjects;
 
     public ControllerSettings() {
         //DEMO Data
-        DemoData demo = new DemoData();
-
-        if (demo.isDemo()) {
-            this.set = demo.getDemoSettings();
-            this.classes = demo.getDemoClasses();
-            this.subjects = demo.getDemoSubjects();
-        } else {
-
-        }
+//        DemoData demo = new DemoData();
+//
+//        if (demo.isDemo()) {
+//            this.set = demo.getDemoSettings();
+//            this.classes = demo.getDemoClasses();
+//            this.subjects = demo.getDemoSubjects();
+//        } else {
+//
+//        }
+        this.set = DataHandler.getInstance().getSettings();
     }
 
     @Override
@@ -59,12 +60,12 @@ public class ControllerSettings extends ContollerParent implements Initializable
 
 
 //        ObservableList<Subject> lst = FXCollections.observableArrayList(this.subjects);
-        this.setSubjects.setItems(FXCollections.observableArrayList(this.subjects));
+        this.setSubjects.setItems(FXCollections.observableArrayList(DataHandler.getInstance().getSubjects()));
 
 //        this.setSubLongCol.setCellValueFactory(new PropertyValueFactory<Subject, String>("subLong"));
 //        this.setSubShortCol.setCellValueFactory(new PropertyValueFactory<Subject, String>("subShort"));
 
-        this.setClasses.setItems(FXCollections.observableArrayList(this.classes));
+        this.setClasses.setItems(FXCollections.observableArrayList(DataHandler.getInstance().getClasses()));
 
 //        this.setClassesCol.setCellFactory(new PropertyValueFactory<SchoolClass, String>("className"));
 

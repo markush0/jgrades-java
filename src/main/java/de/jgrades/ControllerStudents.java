@@ -13,15 +13,10 @@ public class ControllerStudents extends ContollerParent implements Initializable
     @FXML
     TableView tabStudents;
 
-    ArrayList<Student> students;
+    private ArrayList<Student> students;
 
     public ControllerStudents() {
-        DemoData demo = new DemoData();
-        if (demo.isDemo()) {
-            this.students = demo.getDemoStudents();
-        } else {
-
-        }
+        this.students = DataHandler.getInstance().getStudents();
     }
 
     @Override
