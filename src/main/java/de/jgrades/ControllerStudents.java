@@ -21,6 +21,17 @@ public class ControllerStudents extends ContollerParent implements Initializable
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        tabStudents.setItems(FXCollections.observableArrayList(this.students));
+        try {
+            this.tabStudents.setItems(FXCollections.observableArrayList(this.students));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void updatedClass() {
+        super.updatedClass();
+        this.students = DataHandler.getInstance().getStudents();
+        this.tabStudents.setItems(FXCollections.observableArrayList(this.students));
     }
 }

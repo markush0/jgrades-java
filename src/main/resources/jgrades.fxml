@@ -6,7 +6,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="66" maxWidth="1280" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.jgrades.Controller">
+<AnchorPane maxHeight="66" maxWidth="1280" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@style.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.jgrades.Controller">
    <children>
       <AnchorPane prefHeight="66.0" prefWidth="1280.0" styleClass="nav" stylesheets="@style.css">
          <children>
@@ -79,7 +79,7 @@
             <fx:include fx:id="settings" source="settings.fxml" />
             <fx:include fx:id="grades" source="grades.fxml" />
             <fx:include fx:id="home" source="home.fxml" />
-            <ComboBox layoutX="91.0" layoutY="9.0" prefWidth="150.0" />
+            <ComboBox fx:id="cbClass" layoutX="91.0" layoutY="9.0" onAction="#cbClassOnAction" prefWidth="150.0" />
          </children>
       </AnchorPane>
    </children>

@@ -45,7 +45,7 @@ public class Controller implements Initializable {
     /**
      *
      */
-    private ArrayList<SchoolClass> klassen;
+//    private ArrayList<SchoolClass> klassen;
 
     /**
      *
@@ -61,7 +61,7 @@ public class Controller implements Initializable {
     /**
      *
      */
-    private SchoolClass klasse;
+//    private SchoolClass klasse;
 
 //    /**
 //     *
@@ -72,22 +72,26 @@ public class Controller implements Initializable {
     /**
      *
      */
-    public Label lblName;
+//    public Label lblName;
 
     /**
      *
      */
-    public ComboBox<SchoolClass> comboKlasse;
+//    public ComboBox<SchoolClass> comboKlasse;
 
     /**
      *
      */
-    public Label footLbl;
+//    public Label footLbl;
 
     /**
      *
      */
-    public ListView<Student> listStudents;
+//    public ListView<Student> listStudents;
+
+
+    @FXML
+    private ComboBox cbClass;
 
     /**
      *
@@ -127,7 +131,29 @@ public class Controller implements Initializable {
         this.hideContainer();
         this.homeController.show();
 
-//        this.checkVisible(this.settingsController);
+        this.cbClass.setItems(FXCollections.observableArrayList(DataHandler.getInstance().getClasses()));
+
+
+        Callback<ListView<SchoolClass>, ListCell<SchoolClass>> cf = new Callback<ListView<SchoolClass>, ListCell<SchoolClass>>() {
+            //@Override
+            public ListCell<SchoolClass> call(ListView<SchoolClass> param) {
+                return new ListCell<>() {
+                    @Override
+                    protected void updateItem(SchoolClass item, boolean empty) {
+                        super.updateItem(item, empty);
+
+                        if (item == null || empty) {
+                            setText(null);
+                        } else {
+                            setText(item.getClassName());
+                        }
+                    }
+                };
+            }
+        };
+
+        this.cbClass.setButtonCell(cf.call(null));
+        this.cbClass.setCellFactory(cf);
 
     }
 
@@ -139,6 +165,7 @@ public class Controller implements Initializable {
 
 
     public void onButtonOpen(ActionEvent actionEvent) {
+            log.log(Level.INFO, actionEvent.toString());
     }
 
 
@@ -228,16 +255,6 @@ public class Controller implements Initializable {
         this.checkVisible(this.settingsController);
     }
 
-    public void onCbClassAction(ActionEvent actionEvent) {
-        log.log(Level.INFO, actionEvent.toString());
-    }
-
-
-    public void onClickExit(ActionEvent actionEvent) {
-        ((Stage)(((JFXButton)actionEvent.getSource()).getScene().getWindow())).close();
-
-    }
-
     public void onClickExitImage(MouseEvent mouseEvent) {
         ((Stage)(((ImageView)mouseEvent.getSource()).getScene().getWindow())).close();
     }
@@ -251,5 +268,29 @@ public class Controller implements Initializable {
         log.log(Level.INFO, mouseEvent.toString());
 //        ((Stage)(((ImageView)mouseEvent.getSource()).getScene().getWindow())).setMaximized(true);
 //        ((Stage)(((ImageView)mouseEvent.getSource()).getScene().getWindow())).get
+    }
+
+    public void cbClassOnAction(ActionEvent actionEvent) {
+        log.log(Level.INFO, actionEvent.toString());
+        log.log(Level.INFO, this.cbClass.getSelectionModel().getSelectedItem().toString());
+
+        SchoolClass cl = (SchoolClass) this.cbClass.getSelectionModel().getSelectedItem();
+        DataHandler.getInstance().setClassSelected(cl.getClassName());
+
+        this.updatedClass();
+//        this.klasse = this.comboKlasse.getSelectionModel().getSelectedItem();
+//        this.footLbl.setText(this.klasse.getClassName());
+//
+//        if (this.klasse.getListStudent() != null) {
+//            this.listStudents.setItems(FXCollections.observableArrayList(this.klasse.getListStudent()));
+//        } else {
+//            this.listStudents.getItems().clear();
+//        }
+
+    }
+
+    private void updatedClass() {
+        this.studentsController.updatedClass();
+        this.settingsController.updatedClass();
     }
 }

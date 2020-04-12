@@ -16,7 +16,11 @@ public class DataHandler {
         if (demo.isDemo()) {
             this.classes = demo.getDemoClasses();
             this.settings = demo.getDemoSettings();
-            this.classSelected = "5c";
+            this.classSelected = "";
+
+            if (this.classSelected.equals("")) {
+                this.classSelected = this.classes.get(0).getClassName();
+            }
         } else {
 
         }
@@ -62,6 +66,18 @@ public class DataHandler {
 
     public ArrayList<SchoolClass> getClasses() {
         return classes;
+    }
+    public ArrayList<String> getClassesString() {
+//        return classes;
+        ArrayList<String> clString = new ArrayList<>();
+
+        Iterator<SchoolClass> iterator = this.classes.iterator();
+        while (iterator.hasNext()) {
+            SchoolClass cl = iterator.next();
+            clString.add(cl.getClassName());
+        }
+
+        return clString;
     }
 
     public void setClasses(ArrayList<SchoolClass> classes) {

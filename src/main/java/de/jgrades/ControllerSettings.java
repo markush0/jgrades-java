@@ -13,6 +13,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class ControllerSettings extends ContollerParent implements Initializable {
     @FXML
@@ -23,6 +25,8 @@ public class ControllerSettings extends ContollerParent implements Initializable
     @FXML
     private TableColumn setSubShortCol, setSubLongCol, setClassesCol;
 
+    private ArrayList<Subject> subjects;
+    private ArrayList<SchoolClass> classes;
 
     private Settings set;
 //    private ArrayList<SchoolClass> classes;
@@ -51,24 +55,30 @@ public class ControllerSettings extends ContollerParent implements Initializable
         setSchoolName.setText(this.set.getSchoolName());
         setSchoolYear.setText(this.set.getYear());
 
-        //Classes
-//        setClasses.getItems().add()
 
-        //Subjects
-//        this.setClasses
-//        ObservableList<Stavka> oListStavaka = FXCollections.observableArrayList(listStavaka);
+        try {
+            this.subjects = DataHandler.getInstance().getSubjects();
+            this.setSubjects.setItems(FXCollections.observableArrayList(this.subjects));
 
 
-//        ObservableList<Subject> lst = FXCollections.observableArrayList(this.subjects);
-        this.setSubjects.setItems(FXCollections.observableArrayList(DataHandler.getInstance().getSubjects()));
-
-//        this.setSubLongCol.setCellValueFactory(new PropertyValueFactory<Subject, String>("subLong"));
-//        this.setSubShortCol.setCellValueFactory(new PropertyValueFactory<Subject, String>("subShort"));
-
-        this.setClasses.setItems(FXCollections.observableArrayList(DataHandler.getInstance().getClasses()));
-
-//        this.setClassesCol.setCellFactory(new PropertyValueFactory<SchoolClass, String>("className"));
+            this.classes = DataHandler.getInstance().getClasses();
+            this.setClasses.setItems(FXCollections.observableArrayList(this.classes));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
 
+    }
+
+    @Override
+    public void updatedClass() {
+
+        Logger log = Logger.getLogger(getClass().getName());
+
+        log.log(Level.INFO, "updatedClass Settings");
+        super.updatedClass();
+        this.subjects = DataHandler.getInstance().getSubjects();
+
+        this.setSubjects.setItems(FXCollections.observableArrayList(this.subjects));
     }
 }

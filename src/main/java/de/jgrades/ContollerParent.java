@@ -26,4 +26,7 @@ public class ContollerParent {
     public boolean isVisible() {
         return visible;
     }
+
+    public void updatedClass() {
+    }
 }
