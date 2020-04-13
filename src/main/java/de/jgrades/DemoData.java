@@ -4,12 +4,12 @@ import java.util.ArrayList;
 
 public class DemoData {
 
-//    private ArrayList<Student> demoStudents;
+    //    private ArrayList<Student> demoStudents;
     private ArrayList<SchoolClass> demoClasses;
 //    private ArrayList<Subject> demoSubjects;
 
-    private Settings demoSettings;
-    private boolean demo;
+    private final Settings demoSettings;
+    private final boolean demo;
 
     public DemoData() {
         this.demo = true;
@@ -21,7 +21,6 @@ public class DemoData {
         ArrayList<Subject> demoSubjects = new ArrayList<>();
         demoSubjects.add(new Subject("WG", "Werken und Gestalten"));
         demoSubjects.add(new Subject("SO", "Soziales"));
-
 
 
         this.demoClasses = new ArrayList<>();

@@ -56,17 +56,22 @@ public class DataHandler {
         return null;
     }
 
-    public void setClassSelected(String classSelected) {
-        this.classSelected = classSelected;
-    }
-
     public String getClassSelected() {
         return classSelected;
+    }
+
+    public void setClassSelected(String classSelected) {
+        this.classSelected = classSelected;
     }
 
     public ArrayList<SchoolClass> getClasses() {
         return classes;
     }
+
+    public void setClasses(ArrayList<SchoolClass> classes) {
+        this.classes = classes;
+    }
+
     public ArrayList<String> getClassesString() {
 //        return classes;
         ArrayList<String> clString = new ArrayList<>();
@@ -78,10 +83,6 @@ public class DataHandler {
         }
 
         return clString;
-    }
-
-    public void setClasses(ArrayList<SchoolClass> classes) {
-        this.classes = classes;
     }
 
     public Settings getSettings() {

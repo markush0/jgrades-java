@@ -3,27 +3,20 @@ package de.jgrades;
 //import com.google.gson.Gson;
 //import com.google.gson.GsonBuilder;
 //import com.google.gson.reflect.TypeToken;
-import com.jfoenix.controls.JFXButton;
-import javafx.application.Platform;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
+
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.ListCell;
+import javafx.scene.control.ListView;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 
-import java.io.*;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -41,7 +34,6 @@ public class Controller implements Initializable {
 //    private AnchorPane hHome, hStudents, hGrades, hSettings;
 
 
-
     /**
      *
      */
@@ -50,7 +42,7 @@ public class Controller implements Initializable {
     /**
      *
      */
-    private Logger log;
+    private final Logger log;
 
     /**
      *
@@ -165,11 +157,8 @@ public class Controller implements Initializable {
 
 
     public void onButtonOpen(ActionEvent actionEvent) {
-            log.log(Level.INFO, actionEvent.toString());
+        log.log(Level.INFO, actionEvent.toString());
     }
-
-
-
 
 
     /**
@@ -256,12 +245,12 @@ public class Controller implements Initializable {
     }
 
     public void onClickExitImage(MouseEvent mouseEvent) {
-        ((Stage)(((ImageView)mouseEvent.getSource()).getScene().getWindow())).close();
+        ((Stage) (((ImageView) mouseEvent.getSource()).getScene().getWindow())).close();
     }
 
     public void onClickMinimizeImage(MouseEvent mouseEvent) {
         log.log(Level.INFO, mouseEvent.toString());
-        ((Stage)(((ImageView)mouseEvent.getSource()).getScene().getWindow())).setIconified(true);
+        ((Stage) (((ImageView) mouseEvent.getSource()).getScene().getWindow())).setIconified(true);
     }
 
     public void onClickMaximizeImage(MouseEvent mouseEvent) {

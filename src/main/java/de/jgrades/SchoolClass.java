@@ -6,7 +6,7 @@ import javafx.beans.property.StringProperty;
 import java.util.ArrayList;
 
 public class SchoolClass {
-    private StringProperty className;
+    private final StringProperty className;
     private ArrayList<Student> listStudent;
     private ArrayList<Subject> listSubjects;
 
@@ -14,10 +14,6 @@ public class SchoolClass {
         this.className = new SimpleStringProperty(className);
         this.listStudent = listStudent;
 
-    }
-
-    public StringProperty classNameProperty() {
-        return this.className;
     }
 
     public SchoolClass(String className) {
@@ -28,6 +24,10 @@ public class SchoolClass {
         this.className = new SimpleStringProperty(className);
         this.listStudent = listStudent;
         this.listSubjects = listSubjects;
+    }
+
+    public StringProperty classNameProperty() {
+        return this.className;
     }
 
     public String getClassName() {

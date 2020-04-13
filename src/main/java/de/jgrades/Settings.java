@@ -37,9 +37,13 @@ public class Settings {
         this.schoolName = schoolName;
     }
 
-    public String getYear() { return year; }
+    public String getYear() {
+        return year;
+    }
 
-    public void setYear(String year) { this.year = year; }
+    public void setYear(String year) {
+        this.year = year;
+    }
 
 
 }

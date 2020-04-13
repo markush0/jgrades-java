@@ -4,8 +4,8 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public class Subject {
-    private StringProperty subShort;
-    private StringProperty subLong;
+    private final StringProperty subShort;
+    private final StringProperty subLong;
 //    private final StringProperty subShortProp = new SimpleStringProperty();
 
     public Subject(String subShort, String subLong) {
@@ -16,6 +16,7 @@ public class Subject {
     public StringProperty subShortProperty() {
         return this.subShort;
     }
+
     public StringProperty subLongProperty() {
         return this.subLong;
     }

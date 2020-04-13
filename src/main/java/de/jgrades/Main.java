@@ -10,10 +10,11 @@ import org.fxmisc.cssfx.CSSFX;
 import java.io.IOException;
 import java.util.Locale;
 import java.util.ResourceBundle;
+
 public class Main extends Application {
 
     public static final String LANGBUNDLE = "language";
-//    public static final String FXMLRESOURCE = "/de/jgrades/resources/noten.fxml";
+    //    public static final String FXMLRESOURCE = "/de/jgrades/resources/noten.fxml";
     public static final String FXMLRESOURCE = "/jgrades.fxml";
     public static final String TITLE = "title";
     public static final int WIDTH = 1280;
@@ -46,7 +47,7 @@ public class Main extends Application {
 //        Parent root = (Parent) fxmlLoader.load(this.getClass().getResource(FXMLRESOURCE).openStream());
         //fxmlLoader.setLocation(getClass().getResource(FXMLRESOURCE));
         //fxmlLoader.setController(new Controller());
-        Parent root =  fxmlLoader.load();
+        Parent root = fxmlLoader.load();
 
         primaryStage.setTitle(bundle.getString(TITLE));
 

@@ -8,23 +8,11 @@ import java.util.ArrayList;
 
 
 public class Student {
-    private StringProperty studentFirst;
-    private StringProperty studentLast;
-    private StringProperty studentSex;
+    private final StringProperty studentFirst;
+    private final StringProperty studentLast;
+    private final StringProperty studentSex;
     private LocalDate studentBirthday;
     private ArrayList<Grades> listGrades;
-
-    public StringProperty studentFirstProperty() {
-        return studentFirst;
-    }
-
-    public StringProperty studentLastProperty() {
-        return studentLast;
-    }
-
-    public StringProperty studentSexProperty() {
-        return studentSex;
-    }
 
     public Student(String studentFirst, String studentLast, String studentSex, LocalDate studentBirthday) {
         this.studentFirst = new SimpleStringProperty(studentFirst);
@@ -37,6 +25,18 @@ public class Student {
         this.studentFirst = new SimpleStringProperty(studentFirst);
         this.studentLast = new SimpleStringProperty(studentLast);
         this.studentSex = new SimpleStringProperty(studentSex);
+    }
+
+    public StringProperty studentFirstProperty() {
+        return studentFirst;
+    }
+
+    public StringProperty studentLastProperty() {
+        return studentLast;
+    }
+
+    public StringProperty studentSexProperty() {
+        return studentSex;
     }
 
     public String getStudentFirst() {

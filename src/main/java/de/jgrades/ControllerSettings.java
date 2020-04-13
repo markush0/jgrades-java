@@ -1,14 +1,11 @@
 package de.jgrades;
 
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableArray;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -28,7 +25,7 @@ public class ControllerSettings extends ContollerParent implements Initializable
     private ArrayList<Subject> subjects;
     private ArrayList<SchoolClass> classes;
 
-    private Settings set;
+    private final Settings set;
 //    private ArrayList<SchoolClass> classes;
 //    private ArrayList<Subject> subjects;
 
